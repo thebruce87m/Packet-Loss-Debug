@@ -12,7 +12,7 @@ enp0s31f6: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
 ```
 
 Note:
-* These are packets 
+* These are packets dropped by the hardware NIC, possibly due to the ring buffer not being set big enough to handle incoming data.
 
 
 
