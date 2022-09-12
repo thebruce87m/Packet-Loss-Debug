@@ -30,7 +30,7 @@ $ lspci -v
 	Kernel modules: e1000e
 ```
 
-Find out more about the driver module, including configurable parameters under `parm:`
+# Find out more about the driver module, including configurable parameters under `parm:`
 
 ```bash
 $ modinfo e1000e
@@ -64,7 +64,7 @@ Notes:
 
 
 
-Show ring buffer sizes on the NIC:
+# Show ring buffer sizes on the NIC:
 
 ```bash
 $ ethtool --show-ring enp0s31f6
@@ -82,7 +82,7 @@ RX Jumbo:	0
 TX:		256
 ```
 
-View your MTU:
+# View your MTU:
 
 ```bash
 $ ip link show | grep mtu
@@ -97,3 +97,25 @@ Set the MTU, this is temporary for this boot only:
 ```bash
 ip link set enp0s31f6 mtu 9000;
 ```
+
+# Check network kernel settings
+
+```bash
+$ sysctl net.core
+
+net.core.rmem_default = 212992
+net.core.rmem_max = 212992
+
+net.core.wmem_default = 212992
+net.core.wmem_max = 212992
+```
+
+Store any modified settings in a file `/etc/sysctl.conf`
+
+```bash
+net.core.rmem_default=262144
+net.core.wmem_default=262144
+net.core.rmem_max=262144
+net.core.wmem_max=262144
+```
+
