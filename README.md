@@ -1,5 +1,17 @@
 # Packet-Loss-Debug
 
+Watch for dropped packets:
+
+```bash
+$ watch -d ifconfig
+
+enp0s31f6: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+...
+        RX errors 0  dropped 222740  overruns 0  frame 0
+...
+```
+
+
 Find out the driver for the ethernet:
 
 ```bash
