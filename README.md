@@ -40,3 +40,21 @@ parm:           KumeranLockLoss:Enable Kumeran lock loss workaround (array of in
 parm:           WriteProtectNVM:Write-protect NVM [WARNING: disabling this can lead to corrupted NVM] (array of int)
 parm:           CrcStripping:Enable CRC Stripping, disable if your BMC needs the CRC (array of int)
 ```
+
+Show ring buffer sizes on the NIC:
+
+```bash
+$ ethtool --show-ring enp0s31f6
+
+Ring parameters for enp0s31f6:
+Pre-set maximums:
+RX:		4096
+RX Mini:	0
+RX Jumbo:	0
+TX:		4096
+Current hardware settings:
+RX:		256
+RX Mini:	0
+RX Jumbo:	0
+TX:		256
+```
