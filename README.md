@@ -52,6 +52,13 @@ parm:           KumeranLockLoss:Enable Kumeran lock loss workaround (array of in
 parm:           WriteProtectNVM:Write-protect NVM [WARNING: disabling this can lead to corrupted NVM] (array of int)
 parm:           CrcStripping:Enable CRC Stripping, disable if your BMC needs the CRC (array of int)
 ```
+Notes:
+
+* `TxIntDelay` - If a packet has been received but no subsequent packets have been recieved in this time then fire the interrupt. Multiple packets received without a delay of this time will defer the interrupt.
+* `TxAbsIntDelay` - Maximum amount of time before an interrupt will be fired regardless of `TxIntDelay`
+
+
+
 
 Show ring buffer sizes on the NIC:
 
