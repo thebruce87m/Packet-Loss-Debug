@@ -77,3 +77,19 @@ RX Mini:	0
 RX Jumbo:	0
 TX:		256
 ```
+
+View your MTU:
+
+```bash
+$ ip link show | grep mtu
+
+...
+2: enp0s31f6: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
+...
+```
+
+Set the MTU, this is temporary for this boot only:
+
+```bash
+ip link set enp0s31f6 mtu 9000;
+```
